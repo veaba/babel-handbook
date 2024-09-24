@@ -76,7 +76,7 @@ _再进一步_，Babel 自身被分解成了数个核心模块，任何人都可
 
 ---
 
-# <a id="toc-setting-up-babel"></a>安装 Babel
+## <a id="toc-setting-up-babel"></a>安装 Babel
 
 由于 JavaScript 社区没有统一的构建工具、框架、平台等等，因此 Babel 正式集成了对所有主流工具的支持。从 Gulp 到 Browserify，从 Ember 到 Meteor，不管你的环境设置如何，Babel 都有正式的集成支持。
 
@@ -84,7 +84,7 @@ _再进一步_，Babel 自身被分解成了数个核心模块，任何人都可
 
 > **注意：**本手册将涉及到一些命令行工具如 `node` 和 `npm`。在继续阅读之前请确保你已经熟悉这些工具了。
 
-## <a id="toc-babel-cli"></a>`babel-cli`
+### <a id="toc-babel-cli"></a>`babel-cli`
 
 Babel 的 CLI 是一种在命令行下使用 Babel 编译文件的简单方法。
 
@@ -176,7 +176,7 @@ npm run build
 
 这将以与之前同样的方式运行 Babel，但这一次我们使用的是本地副本。
 
-## <a id="toc-babel-register"></a>`babel-register`
+### <a id="toc-babel-register"></a>`babel-register`
 
 下一个常用的运行 Babel 的方法是通过 `babel-register`。这种方法只需要引入文件就可以运行 Babel，或许能更好地融入你的项目设置。
 
@@ -219,7 +219,7 @@ require('babel-register');
 console.log('Hello world!');
 ```
 
-## <a id="toc-babel-node"></a>`babel-node`
+### <a id="toc-babel-node"></a>`babel-node`
 
 如果你要用 `node` CLI 来运行代码，那么整合 Babel 最简单的方式就是使用 `babel-node` CLI，它是 `node` CLI 的替代品。
 
@@ -255,7 +255,7 @@ $ npm install --save-dev babel-cli
 
 > 提示：你可以使用 [`npm-run`](https://www.npmjs.com/package/npm-run)。
 
-## <a id="toc-babel-core"></a>`babel-core`
+### <a id="toc-babel-core"></a>`babel-core`
 
 如果你需要以编程的方式来使用 Babel，可以使用 `babel-core` 这个包。
 
@@ -302,7 +302,7 @@ babel.transformFromAst(ast, code, options);
 
 ---
 
-# <a id="toc-configuring-babel"></a>配置 Babel
+## <a id="toc-configuring-babel"></a>配置 Babel
 
 你或许已经注意到了，目前为止通过运行 Babel 自己我们并没能 “翻译” 代码，而仅仅是把代码从一处拷贝到了另一处。
 
@@ -312,7 +312,7 @@ babel.transformFromAst(ast, code, options);
 
 你可以通过安装**插件 (plugins) **或**预设 (presets，也就是一组插件)**来指示 Babel 去做什么事情。
 
-## <a id="toc-babelrc"></a>`.babelrc`
+### <a id="toc-babelrc"></a>`.babelrc`
 
 在我们告诉 Babel 该做什么之前，我们需要创建一个配置文件。你需要做的就是在项目的根路径下创建 `.babelrc` 文件。然后输入以下内容作为开始：
 
@@ -327,7 +327,7 @@ babel.transformFromAst(ast, code, options);
 
 > **注意：**尽管你也可以用其他方式给 Babel 传递选项，但 `.babelrc` 文件是约定也是最好的方式。
 
-## <a id="toc-babel-preset-es2015"></a>`babel-preset-es2015`
+### <a id="toc-babel-preset-es2015"></a>`babel-preset-es2015`
 
 我们先从让 Babel 把 ES2015 (最新版本的 JavaScript 标准，也叫做 ES6) 编译成 ES5 (现今在大多数 JavaScript 环境下可用的版本) 开始吧。
 
@@ -348,7 +348,7 @@ $ npm install --save-dev babel-preset-es2015
   }
 ```
 
-## <a id="toc-babel-preset-react"></a>`babel-preset-react`
+### <a id="toc-babel-preset-react"></a>`babel-preset-react`
 
 设置 React 一样容易。只需要安装这个预设：
 
@@ -368,7 +368,7 @@ $ npm install --save-dev babel-preset-react
   }
 ```
 
-## <a id="toc-babel-preset-stage-x"></a>`babel-preset-stage-x`
+### <a id="toc-babel-preset-stage-x"></a>`babel-preset-stage-x`
 
 JavaScript 还有一些提案，正在积极通过 TC39 (ECMAScript 标准背后的技术委员会) 的流程成为标准的一部分。
 
@@ -406,11 +406,11 @@ $ npm install --save-dev babel-preset-stage-2
 
 ---
 
-# <a id="toc-executing-babel-generated-code"></a>执行 Babel 生成的代码
+## <a id="toc-executing-babel-generated-code"></a>执行 Babel 生成的代码
 
 即便你已经用 Babel 编译了你的代码，但这还不算完。
 
-## <a id="toc-babel-polyfill"></a>`babel-polyfill`
+### <a id="toc-babel-polyfill"></a>`babel-polyfill`
 
 Babel 几乎可以编译所有时新的 JavaScript 语法，但对于 APIs 来说却并非如此。
 
@@ -452,7 +452,7 @@ $ npm install --save babel-polyfill
 import 'babel-polyfill';
 ```
 
-## <a id="toc-babel-runtime"></a>`babel-runtime`
+### <a id="toc-babel-runtime"></a>`babel-runtime`
 
 为了实现 ECMAScript 规范的细节，Babel 会使用 “助手” 方法来保持生成代码的整洁。
 
@@ -510,11 +510,11 @@ let Foo = (function () {
 
 ---
 
-# <a id="toc-configuring-babel-advanced"></a>配置 Babel (进阶)
+## <a id="toc-configuring-babel-advanced"></a>配置 Babel (进阶)
 
 大多数人使用 Babel 的内建预设就足够了，不过 Babel 提供了更多更细粒度的能力。
 
-## <a id="toc-manually-specifying-plugins"></a>手动指定插件
+### <a id="toc-manually-specifying-plugins"></a>手动指定插件
 
 Babel 预设就是一些预先配置好的插件的集合，如果你想要做一些不一样的事情你会手动去设定插件，这和使用预设几乎完全相同。
 
@@ -540,7 +540,7 @@ $ npm install --save-dev babel-plugin-transform-es2015-classes
 
 同时也别忘了看看[由社区构建的其他插件](https://www.npmjs.com/search?q=babel-plugin)。如果你想学习如何编写自己的插件可以阅读 [Babel 插件手册](plugin-handbook.md)。
 
-## <a id="toc-plugin-options"></a>插件选项
+### <a id="toc-plugin-options"></a>插件选项
 
 很多插件也有选项用于配置他们自身的行为。例如，很多转换器都有 “宽松” 模式，通过放弃一些标准中的行为来生成更简化且性能更好的代码。
 
@@ -557,7 +557,7 @@ $ npm install --save-dev babel-plugin-transform-es2015-classes
 
 > 接下来几周内我会更新插件文档来详细介绍每一个选项。[关注我以获知更新](https://twitter.com/thejameskyle)。
 
-## <a id="toc-customizing-babel-based-on-environment"></a>基于环境自定义 Babel
+### <a id="toc-customizing-babel-based-on-environment"></a>基于环境自定义 Babel
 
 Babel 插件解决许多不同的问题。其中大多数是开发工具，可以帮助你调试代码或是与工具集成。也有大量的插件用于在生产环境中优化你的代码。
 
@@ -600,7 +600,7 @@ $ [COMMAND]
 >
 > **提示：**如果你想要让命令能够跨 unix 和 windows 平台运行的话，可以使用 [`cross-env`](https://www.npmjs.com/package/cross-env)。
 
-## <a id="toc-making-your-own-preset"></a>制作你自己的预设 (preset)
+### <a id="toc-making-your-own-preset"></a>制作你自己的预设 (preset)
 
 手动指定插件？插件选项？环境特定设置？所有这些配置都会在你的项目里产生大量的重复工作。
 
@@ -650,11 +650,11 @@ module.exports = {
 
 ---
 
-# <a id="toc-babel-and-other-tools"></a>Babel 和其他工具
+## <a id="toc-babel-and-other-tools"></a>Babel 和其他工具
 
 一旦你掌握的窍门，安装 Babel 还是十分简明的，不过和其他工具搭配在一起就会变得困难多了。不过我们一直在与其他项目密切合作以确保这种体验尽可能简单。
 
-## <a id="toc-static-analysis-tools"></a>静态分析工具
+### <a id="toc-static-analysis-tools"></a>静态分析工具
 
 新标准为语言带来了许多新的语法，静态分析工具正在将此利用起来。
 
@@ -735,7 +735,7 @@ JSCS 是一个极受欢迎的工具，在语法检查的基础上更进一步检
 
 Documentation.js 使用 Babel 来支持所有最新的语法，包括用于在你的代码中声明类型所用的 Flow 注解在内，
 
-## <a id="toc-frameworks"></a>框架
+### <a id="toc-frameworks"></a>框架
 
 所有主流的 JavaScript 框架都正在努力调整他们的 APIs 向这门语言的未来看齐。有鉴于此，配套工具方面已经做出了大量的工作。
 
@@ -755,7 +755,7 @@ React 社区采用 Babel 并围绕它来运行，现在社区已经创建了[大
 > [WIP]
 -->
 
-## <a id="toc-text-editors-and-ides"></a>文本编辑器和 IDEs (集成开发环境)
+### <a id="toc-text-editors-and-ides"></a>文本编辑器和 IDEs (集成开发环境)
 
 通过 Babel 引入 ES2015，JSX，和流式语法固然是大有裨益，可如果你的文本编辑不支持那可就糟糕透了。因此，别忘了为你的文本编辑器或是 IDE 安装 Babel 插件。
 
@@ -772,7 +772,7 @@ React 社区采用 Babel 并围绕它来运行，现在社区已经创建了[大
 
 ---
 
-# <a id="toc-babel-support"></a>Babel 支持
+## <a id="toc-babel-support"></a>Babel 支持
 
 Babel 的社区非常庞大并且增长速度很快，伴随着我们成长的同时我们希望保证人们总能获取他们需要的所有资源。所以我们提供了数种途径来提供支持。
 
@@ -780,11 +780,11 @@ Babel 的社区非常庞大并且增长速度很快，伴随着我们成长的�
 
 同时我们也在寻求发展一个自我支持式的社区，为那些始终热诚奉献的人们。如果别人问的问题你恰好知道答案，请不吝花费几分钟帮帮他们。在此过程中也请尽力保持友善与相互理解。
 
-## <a id="toc-babel-forum"></a>Babel 论坛
+### <a id="toc-babel-forum"></a>Babel 论坛
 
 [Discourse](http://www.discourse.org) 免费为我们提供了一个托管版本的论坛 (我们爱死他们了！)。如果你是个论坛控请不要错过 [discuss.babeljs.io](https://discuss.babeljs.io)。
 
-## <a id="toc-babel-chat"></a>Babel 聊天
+### <a id="toc-babel-chat"></a>Babel 聊天
 
 无人不爱 [Slack](https://slack.com)。如果你正在寻求来自社区的即时支持，那就来 [slack.babeljs.io](https://slack.babeljs.io) 和我们聊天吧。
 
@@ -794,7 +794,7 @@ Babel 的社区非常庞大并且增长速度很快，伴随着我们成长的�
 > [WIP]
 -->
 
-## <a id="toc-babel-issues"></a>Babel 问题
+### <a id="toc-babel-issues"></a>Babel 问题
 
 Babel 使用 [Github](http://github.com) 提供的问题跟踪器。
 
@@ -805,11 +805,11 @@ Babel 使用 [Github](http://github.com) 提供的问题跟踪器。
 - [先搜搜看有没有现存的类似问题](https://github.com/babel/babel/issues)
 - 创建一个新的错误报告</> 或请求新功能</></li></ul>
 
-  ### <a id="toc-creating-an-awesome-babel-bug-report"></a>创建漂亮的 Babel 错误报告
+### <a id="toc-creating-an-awesome-babel-bug-report"></a>创建漂亮的 Babel 错误报告
 
-  Babel 的问题有时候很难远程调试，所以我们希望能获取尽可能详细的信息来帮助我们解决问题。花点时间去撰写一份好的错误报告会让你的问题更快得到解决。
+Babel 的问题有时候很难远程调试，所以我们希望能获取尽可能详细的信息来帮助我们解决问题。花点时间去撰写一份好的错误报告会让你的问题更快得到解决。
 
-  首先，尝试隔离问题。并非设置过程的每一步都是导致问题的原因。如果你的问题是一段输入代码，试着尽可能把与问题不相关的代码都删除掉。
+首先，尝试隔离问题。并非设置过程的每一步都是导致问题的原因。如果你的问题是一段输入代码，试着尽可能把与问题不相关的代码都删除掉。
 
 - [WIP]
 
