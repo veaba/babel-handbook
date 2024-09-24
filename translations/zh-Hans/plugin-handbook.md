@@ -229,7 +229,7 @@ Babel 的三个主要处理步骤分别是：**解析 (parse)**，**转换 (tran
 
 ### <a id="toc-parse"></a>解析
 
-**解析**步骤接收代码并输出 AST。这个步骤分为两个阶段：[**词法分析 (Lexical Analysis) **](https://en.wikipedia.org/wiki/Lexical_analysis)和[**语法分析 (Syntactic Analysis)**](https://en.wikipedia.org/wiki/Parsing)。
+**解析**步骤接收代码并输出 AST。这个步骤分为两个阶段：[**词法分析 Lexical Analysis**](https://en.wikipedia.org/wiki/Lexical_analysis) 和[**语法分析 Syntactic Analysis**](https://en.wikipedia.org/wiki/Parsing)。
 
 #### <a id="toc-lexical-analysis"></a>词法分析
 
@@ -295,33 +295,33 @@ n * n;
 
 ```md
 {
-type: "FunctionDeclaration",
-id: {
-type: "Identifier",
-name: "square"
-},
-params: [{
-type: "Identifier",
-name: "n"
-}],
-body: {
-type: "BlockStatement",
-body: [{
-type: "ReturnStatement",
-argument: {
-type: "BinaryExpression",
-operator: "*",
-left: {
-type: "Identifier",
-name: "n"
-},
-right: {
-type: "Identifier",
-name: "n"
-}
-}
-}]
-}
+  type: "FunctionDeclaration",
+  id: {
+    type: "Identifier",
+    name: "square"
+  },
+  params: [{
+    type: "Identifier",
+    name: "n"
+  }],
+  body: {
+    type: "BlockStatement",
+    body: [{
+      type: "ReturnStatement",
+      argument: {
+        type: "BinaryExpression",
+        operator: "*",
+        left: {
+          type: "Identifier",
+          name: "n"
+        },
+        right: {
+          type: "Identifier",
+          name: "n"
+        }
+      }
+    }]
+  }
 }
 ```
 
